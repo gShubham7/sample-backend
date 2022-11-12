@@ -13,8 +13,10 @@ const MenRoute = require("./features/mens/mens.router");
 const WomenRoute = require("./features/womens/womens.router");
 const ElectronicRoute = require("./features/electronics/electronics.router");
 const CartRoute = require("./features/cart/cart.router");
-app.get('/', function (req, res) {
-  res.sendFile( `${process.cwd()}/public/index.html` );
+app.use(express.static('public'));
+
+app.get('/', function(req, res) {
+   res.sendFile('../public/index.html');
 });
 app.use("/user", UserRoute);
 app.use("/mens", MenRoute);
