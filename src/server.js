@@ -13,16 +13,16 @@ const MenRoute = require("./features/mens/mens.router");
 const WomenRoute = require("./features/womens/womens.router");
 const ElectronicRoute = require("./features/electronics/electronics.router");
 const CartRoute = require("./features/cart/cart.router");
-app.use(express.static('public'));
+const UsersRoute = require("./features/users/users.router");
+const cartsRoute = require("./features/carts/carts.router");
 
-app.get('/', function(req, res) {
-   res.sendFile('../public/index.html');
-});
 app.use("/user", UserRoute);
 app.use("/mens", MenRoute);
 app.use("/womens", WomenRoute);
 app.use("/electronics", ElectronicRoute);
 app.use("/cart", CartRoute);
+app.use("/users", UsersRoute);
+app.use("/carts", cartsRoute);
 
 app.listen(PORT, async () => {
   await connect();
