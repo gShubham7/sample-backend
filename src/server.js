@@ -14,10 +14,6 @@ const MenRoute = require("./features/mens/mens.router");
 const WomenRoute = require("./features/womens/womens.router");
 const ElectronicRoute = require("./features/electronics/electronics.router");
 const CartRoute = require("./features/cart/cart.router");
-app.use(express.static('public')) // relative path of client-side code
-app.get('*', function(req, res) {
-    res.sendFile('index.html', { root: __dirname })
-})
 app.use("/user", UserRoute);
 app.use("/mens", MenRoute);
 app.use("/womens", WomenRoute);
